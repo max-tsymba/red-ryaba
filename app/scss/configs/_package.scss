@@ -54,9 +54,9 @@ button{
 }
 
 %button-reg{
-    @include create-button(40, 540, 10);
+    @include create-button(50, 680, 10);
     color: #FFFFFF;
-    background-color: #D3003C;
+    background-color: #ED2024;
     font-weight: 700;
 }
 /*======================================================================================*/
