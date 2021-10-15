@@ -3,10 +3,10 @@
     position: absolute;
     left: 0;
     right: 0;
+    background-color: #ED2024;
     
     @media only screen and (min-width: 577px) {
-        height: 239px;
-        background-color: #FFF762;
+        height: 237px;
     }
 
     &__inner{
@@ -14,6 +14,7 @@
         justify-content: space-between;
         padding-top: 82px;
         padding-bottom: 10px;
+        align-items: center;
 
         @media only screen and (max-width: 576px) {
             padding-top: 53px;
@@ -47,8 +48,9 @@
 
         &-btn{
             @extend %button-date;
-            background-color: #004E85;
+            background-color: #FFFFFF;
             border-radius: 60px;
+            color: #ED2024;
             font-family: 'Roboto';
             margin-right: 46px;
             transition: .3s all;
@@ -56,7 +58,7 @@
             cursor: unset;
             
             &:hover{
-                background-color: #013e69;
+                background-color: #e0e0e0;
             }
 
             @media only screen and (max-width: 1024px) {
