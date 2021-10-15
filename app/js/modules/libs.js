@@ -6,28 +6,31 @@ const burgerOpener = (burgerID, menuSelector, closeBtnSelector, menuLinksSelecto
         links = document.querySelectorAll(menuLinksSelector),
         closeBtn = document.querySelector(closeBtnSelector);
 
-    burgerBtn.addEventListener('click', () => menu.classList.add('opened'));
-    closeBtn.addEventListener('click', () => menu.classList.remove('opened'));
-
-    links.forEach((link) => {
-        link.addEventListener('click', () => {
-            menu.classList.remove('opened');
+    if(burgerBtn !== null)
+        burgerBtn.addEventListener('click', () => menu.classList.add('opened'));
+    if(closeBtn !== null) {
+        closeBtn.addEventListener('click', () => menu.classList.remove('opened'));
+        links.forEach((link) => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('opened');
+            });
         });
-    });
-
-    if(menuSelector === '#overlay') {
-        menu.addEventListener('click', (e) => {
-            if(e.target === menu) {
-                menu.classList.remove('opened');
-            }
-        })
-    } else {
-        document.body.addEventListener('click', (e) => {
-            if(e.target !== menu && e.target !== burgerBtn && e.target !== document.querySelector('.burger-line')) {
-                menu.classList.remove('opened');
-            }
-        })
+    
+        if(menuSelector === '#overlay') {
+            menu.addEventListener('click', (e) => {
+                if(e.target === menu) {
+                    menu.classList.remove('opened');
+                }
+            })
+        } else {
+            document.body.addEventListener('click', (e) => {
+                if(e.target !== menu && e.target !== burgerBtn && e.target !== document.querySelector('.burger-line')) {
+                    menu.classList.remove('opened');
+                }
+            })
+        }
     }
+
 }
 /*======================================================================================*/
 

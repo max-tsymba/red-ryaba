@@ -15,9 +15,12 @@
         padding-top: 82px;
         padding-bottom: 10px;
         align-items: center;
+        position: relative;
+        z-index: 10;
 
         @media only screen and (max-width: 576px) {
-            padding-top: 53px;
+            padding-top: 51px;
+            padding-bottom: 32px;
         }
     }
 
@@ -45,6 +48,8 @@
     &__buttons{
         display: flex;
         align-items: flex-start;
+        position: relative;
+        z-index: 10;
 
         &-btn{
             @extend %button-date;
