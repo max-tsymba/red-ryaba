@@ -1,5 +1,6 @@
 /*=====================================TOP SECTION======================================*/
 .top{
+    position: relative;
 
     @media only screen and (min-width: 577px) {
         min-height: 100vh;
@@ -26,12 +27,26 @@
         }
     }
 
+    &__banner{
+        position: absolute;
+        top: 100px;
+        right: 100px;
+    }
+
+    &__subbanner{
+        position: absolute;
+        top: 88%;
+        right: 300px;
+    }
+
     &__inner{
         padding-top: 266px;
+        max-width: 690px;
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-right: auto;
 
         @media only screen and (max-width: 1200px) {
             margin: 0 auto;
