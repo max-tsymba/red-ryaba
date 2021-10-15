@@ -1,0 +1,182 @@
+/*=========================================MAIN=========================================*/
+.header{
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    @media only screen and (min-width: 577px) {
+        height: 239px;
+        background-color: #FFF762;
+    }
+
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 82px;
+        padding-bottom: 10px;
+
+        @media only screen and (max-width: 576px) {
+            padding-top: 53px;
+        }
+    }
+
+    &__logos{
+        width: 547px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media only screen and (max-width: 576px) {
+            width: 330px;
+        }
+
+        &-link{
+            &:nth-child(2) {
+                margin-left: 13px;
+            }
+            &:nth-child(3) {
+                margin-left: 20px;
+            }
+            outline: none;
+        }
+    }
+
+    &__buttons{
+        display: flex;
+        align-items: flex-start;
+
+        &-btn{
+            @extend %button-date;
+            background-color: #004E85;
+            border-radius: 60px;
+            font-family: 'Roboto';
+            margin-right: 46px;
+            transition: .3s all;
+            outline: none;
+            cursor: unset;
+            
+            &:hover{
+                background-color: #013e69;
+            }
+
+            @media only screen and (max-width: 1024px) {
+                margin-right: 10px;
+            }
+
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.top-btn{
+    display: none;
+    margin-right: 0;
+    font-size: 30px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 330px;
+    margin-top: 48px;
+
+    @media only screen and (max-width: 576px) {
+        display: block;
+        max-width: 100%;
+        order: 3;
+    }
+
+    @media only screen and (min-width: 280px) and (max-width: 576px) {
+        font-size: 24px;
+    }
+}
+
+.header-container{
+    position: relative;
+}
+/*======================================================================================*/
+
+
+/*=========================================MENU=========================================*/
+.header__menu{
+    background: rgba(0,0,0,.6);
+    border: 3px solid #6d6e6f;
+    mix-blend-mode: normal;
+    border-radius: 20px;
+    width: 450px;
+    padding: 124px 39px 35px 39px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    position: absolute;
+    right: 5px;
+    top: 82px;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all .4s;
+    transition: all .4s;
+
+    @media only screen and (max-width: 768px) {
+        top: 70px;
+    }
+
+    @media only screen and (max-width: 576px) {
+        top: 38px;
+        right: 22px;
+        width: 350px;
+        padding: 100px 39px 100px 39px;
+    }
+
+    @media only screen and (min-width: 280px) and (max-width: 425px) {
+        top: 38px;
+        right: 5px;
+        width: 270px;
+    }
+    
+    &-img{
+        position: absolute;
+        top: 5px;
+        right: 13px;
+    }
+
+    &-item{
+        position: relative;
+
+        &::before{
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #ffd60b;
+            left: -20px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            border-radius: 50%;
+        }
+    }
+
+    &-link{
+        font-family: "PT Sans";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 31px;
+        color: #fff;
+        display: inline-block;
+    }
+
+    &-item + .header__menu-item {
+        margin-top: 20px;
+    }
+}
+
+.header__menu.opened{
+    z-index: 10;
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+/*======================================================================================*/

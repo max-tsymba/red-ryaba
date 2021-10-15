@@ -1,0 +1,87 @@
+/*====================================IMPORT CONFIGS====================================*/
+@import './configs/reset';
+@import './configs/package';
+@import './configs/mixin';
+/*======================================================================================*/
+
+
+/*====================================IMPORT MODULES====================================*/
+@import './fonts';
+@import './modules/vars';
+@import './modules/global';
+/*======================================================================================*/
+
+
+/*=====================================IMPORT PARTS=====================================*/
+@import './components/header';
+@import './components/main';
+@import './components/footer';
+/*======================================================================================*/
+
+body{
+    background-color: $main-bg;
+}
+
+[data-aos=fade-up-right] {
+    -webkit-transform: translate3d(0px,100px,0);
+    transform: translate3d(0px,100px,0);
+}
+
+[data-aos^=fade][data-aos^=fade], [data-aos^=zoom][data-aos^=zoom] {
+    opacity: 0;
+    -webkit-transition-property: opacity,-webkit-transform;
+    transition-property: opacity,transform;
+    transition-property: opacity,transform,-webkit-transform;
+}
+
+[data-aos][data-aos][data-aos-duration="400"], body[data-aos-duration="400"] [data-aos] {
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+[data-aos][data-aos][data-aos-delay="300"].aos-animate, body[data-aos-delay="300"] [data-aos].aos-animate {
+    -webkit-transition-delay: .1s;
+    transition-delay: .1s;
+}
+
+[data-aos][data-aos][data-aos-delay="300"], body[data-aos-delay="300"] [data-aos] {
+    -webkit-transition-delay: 0;
+    transition-delay: 0;
+}
+
+[data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] {
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
+[data-aos][data-aos][data-aos-duration="400"], body[data-aos-duration="400"] [data-aos] {
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+}
+
+
+[data-aos^=fade][data-aos^=fade], [data-aos^=zoom][data-aos^=zoom] {
+
+    @media (min-width: 769px) {
+        opacity: 0;
+        -webkit-transition-property: opacity,-webkit-transform;
+        transition-property: opacity,transform;
+        transition-property: opacity,transform,-webkit-transform;
+    }
+
+    @media (max-width: 768px) {
+        -webkit-transform: translate3d(0px,100px,0);
+        transform: translate3d(0px,100px,0);
+    }
+}
